@@ -1,0 +1,13 @@
+module.exports={
+  entry:"./src/index.js",
+  output:{
+    publicPath:'temp',
+    filename:'bundle.js'
+  },
+  devServer:{
+    port:8080,
+    hot:true,
+    open:true,
+    contentBase:'www'
+  }
+}
