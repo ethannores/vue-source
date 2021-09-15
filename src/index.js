@@ -28,3 +28,28 @@
 // console.log(obj.d[0].name)
 // obj.d.push(122312)
 // console.log(obj.d)
+
+// 关于diff和虚拟dom --snabbdom
+import h from './snabbdom/h'
+import patch from './snabbdom/patch'
+let btn =document.getElementById('btn');
+let container = document.getElementById('app');
+let a = h('div',{},'嘻嘻嘻')
+let b = h('p',{},'你好')
+let c=h('ul',{},[
+  h('li',{},"A"),
+  h('li',{},"B"),
+  h('li',{},"C"),
+  h('li',{},"D"),
+])
+let d=h('ul',{},[
+  h('li',{},"D"),
+  h('li',{},"E"),
+  h('li',{},"F"),
+  h('li',{},"F"),
+])
+patch(container,a)
+btn.onclick=function(){
+  patch(c,d)
+}
+
