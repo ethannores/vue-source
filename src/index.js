@@ -37,18 +37,23 @@ let container = document.getElementById('app');
 let a = h('div',{},'嘻嘻嘻')
 let b = h('p',{},'你好')
 let c=h('ul',{},[
-  h('li',{},"A"),
-  h('li',{},"B"),
-  h('li',{},"C"),
-  h('li',{},"D"),
+  h('li',{key:"A"},"A"),
+  h('li',{key:"B"},"B"),
+  h('li',{key:"C"},"C"),
+  h('li',{key:"D"},"D"),
 ])
 let d=h('ul',{},[
-  h('li',{},"D"),
-  h('li',{},"E"),
-  h('li',{},"F"),
-  h('li',{},"F"),
+  h('li',{key:"B"},"B"),
+  h('li',{key:"A"},"A"),
+  h('li',{key:"D"},"D"),
+  h('li',{key:"C"},"C"),
 ])
-patch(container,a)
+let e=h('div',{},[
+  h('span',{},'嘻嘻嘻嘻嘻'),
+  h('span',{},'123124'),
+  h('span',{},'vasfa'),
+])
+patch(container,c)
 btn.onclick=function(){
   patch(c,d)
 }
